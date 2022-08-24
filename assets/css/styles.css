@@ -48,17 +48,18 @@
 }
 
 .dark-theme button,
+.dark-theme h1,
 .dark-theme h2,
 .dark-theme h3 {
   letter-spacing: 5px;
   font-weight: normal;
 }
 
-.dark-theme .elemento-invertido {
+.dark-theme .invert-element {
   transform: rotateZ(180deg) scaleX(-1);
 }
 
-/**  Generic styles **/
+/***  GENERIC STYLES ***/
 
 * {
   margin: 0;
@@ -70,6 +71,7 @@ body {
   background: var(--page-background);
 }
 
+h1,
 h2,
 h3 {
   font-family: var(--featured-font-family);
@@ -87,12 +89,12 @@ p,
 input,
 textarea,
 label {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
-button{
+button {
   padding: 16px 32px;
-  background: transparent;
+  background-color: transparent;
   font-weight: 900;
   font-family: var(--featured-font-family);
   font-size: 1.25rem;
@@ -101,46 +103,51 @@ button{
   transition: background 1s;
 }
 
-main{
+main {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  position: relative;
 }
 
-main::before{
+main::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
   background: var(--page-background) no-repeat,
-  url("../images/backgrounds/florest.png") no-repeat;
+    url("../images/backgrounds/florest.png") no-repeat;
   background-size: cover;
   z-index: -1;
 }
 
-input,textarea{
+input,
+textarea {
   border: 2px solid var(--primary-color-contrast);
   background-color: var(--field-background-color);
   color: var(--primary-color-contrast);
   padding: 8px;
+}
+
+input,
+textarea {
   margin-bottom: 24px;
 }
 
-label{
+label {
   margin-bottom: 8px;
 }
 
 input:focus-visible,
-textarea:focus-visible{
+textarea:focus-visible {
   outline: none;
   border-color: black;
 }
 
-/** Header style**/
+/*** HEADER STYLES ***/
 
-header{
+header {
   background-color: var(--header-background-color);
   min-height: 850px;
   display: flex;
@@ -149,61 +156,62 @@ header{
   position: relative;
 }
 
-header::before{
+header::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url('../images/banner/florest.webp');
+  background-image: url("../images/banner/florest.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 90%;
   filter: saturate(0);
-  opacity: .2;
+  opacity: 0.2;
 }
 
-.header-content{
+.header-content {
   max-width: 700px;
   padding: 80px 20px;
   text-align: center;
   z-index: 2;
 }
 
-.header-content img{
+.header-content img {
   width: 80%;
 }
-.header-content p{
-  margin: 30px 0 50px; 
+
+.header-content p {
+  margin: 30px 0 50px;
 }
 
-.header-content button{
+.header-content button {
   border: 3px solid var(--primary-color);
   color: var(--primary-color);
 }
 
-.header-content button:hover{
+.header-content button:hover {
   background-color: var(--primary-color);
   color: var(--primary-color-contrast);
 }
 
-/** Character Styles**/
+/*** WORLD CHARACTERS STYLES ***/
 
-.world-caracters{
+.world-characters {
   width: 100%;
   max-width: 900px;
   position: absolute;
 }
 
-.world-caracters#topcaracter{
+.world-characters#top-characters {
   height: 100%;
   background-color: var(--character-top-image-color);
   bottom: -3px;
 
   mask: var(--character-top-image-src) bottom / contain no-repeat;
-  -webkit-mask:var(--character-top-image-src) bottom / 100% no-repeat;
+  -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
 }
 
-.world-caracters#bottom-caracters{
+.world-characters#bottom-characters {
   height: 500px;
   background-color: var(--character-bottom-image-color);
   top: 3px;
@@ -211,49 +219,55 @@ header::before{
   position: relative;
 
   mask: var(--character-bottom-image-src) bottom / contain no-repeat;
-  -webkit-mask:var(--character-bottom-image-src) bottom / 100% no-repeat;
+  -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
 }
 
-/*Section style*/
+/*** SECTIONS STYLES ***/
 
-section{
+section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 95px;
 }
 
-/* section 1*/
+/* Section 01 - Inverted World */
 
-.container{
+.container {
   max-width: 1200px;
 }
 
-#inverted-world{
+#inverted-world {
   align-items: center;
 }
 
-#inverted-world .texts{
+#inverted-world .texts {
   width: 50%;
 }
 
-#inverted-world .texts h2{
+#inverted-world .texts h2 {
   max-width: 300px;
 }
 
-/* Section 2*/
+/* Section 02 - Stranger Things Trailer */
 
-#stranger-things-trailer .texts{
+#stranger-things-trailer .texts {
   width: 50%;
   text-align: right;
 }
 
-#stranger-things-trailer .texts h2{
+#stranger-things-trailer .texts h2 {
+  max-width: 425px;
+  display: inline-block;
+}
+
+#stranger-things-trailer .video-frame {
   background-color: var(--primary-color);
 }
-#stranger-things-trailer .video-frame iframe{
+
+#stranger-things-trailer .video-frame iframe {
   position: relative;
   bottom: 24px;
-  left:24px;
+  left: 24px;
   border: 2px solid;
   border-image: linear-gradient(
     var(--primary-color),
@@ -261,27 +275,30 @@ section{
   );
   border-image-slice: 10;
 }
-#stranger-things-galeria {
+
+/* Section 03 - Stranger Things Gallery */
+
+#stranger-things-gallery {
   width: 100%;
   background: var(--background-lamp-image) 120% / 50% no-repeat;
   justify-content: center;
 }
 
-#stranger-things-galeria .container {
+#stranger-things-gallery .container {
   width: 100%;
 }
 
-#stranger-things-galeria .container h2 {
+#stranger-things-gallery .container h2 {
   width: 800px;
 }
 
-#stranger-things-galeria .galeria-container {
+#stranger-things-gallery .gallery-container {
   display: flex;
   gap: 50px;
   padding-left: 20px;
 }
 
-#stranger-things-galeria .galeria-image {
+#stranger-things-gallery .gallery-image {
   width: 250px;
   height: 250px;
   outline: 20px solid var(--highlight-color);
@@ -289,52 +306,52 @@ section{
   box-sizing: initial;
 }
 
-#stranger-things-galeria .galeria-image img {
+#stranger-things-gallery .gallery-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 10px solid var(--highlight-color);
 }
 
-/** Section 4**/
+/* Section 04 - Dungeons & Dragons Form */
 
-#formulario {
+#form {
   flex-direction: column;
   align-items: center;
   gap: 40px;
   text-align: center;
 }
 
-#formulario h2 {
+#form h2 {
   width: 600px;
 }
 
-#formulario .form-content h3 {
+#form .form-content h3 {
   color: var(--highlight-color);
 }
 
-#formulario .form-content h3 span {
+#form .form-content h3 span {
   color: var(--primary-color);
 }
 
-#formulario .form-content {
+#form .form-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#formulario .form-content h3 {
+#form .form-content h3 {
   flex-basis: 30%;
   text-align: left;
   margin: 0;
 }
 
-#formulario .form-container {
+#form .form-container {
   flex-basis: 50%;
   position: relative;
 }
 
-#formulario .form-container::after {
+#form .form-container::after {
   content: "";
   background-color: var(--highlight-color);
   width: 100%;
@@ -345,7 +362,7 @@ section{
   z-index: -1;
 }
 
-#formulario .form-container form {
+#form .form-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,7 +372,7 @@ section{
   text-align: left;
 }
 
-#formulario .form-container form button {
+#form .form-container form button {
   border: none;
   background-color: var(--field-background-color);
   color: var(--primary-color-contrast);
@@ -363,12 +380,12 @@ section{
   align-self: center;
 }
 
-#formulario .form-container form button:hover {
+#form .form-container form button:hover {
   background-color: var(--primary-color-contrast);
   color: var(--field-background-color);
 }
 
-/** Footer style**/
+/*** FOOTER STYLES ***/
 
 footer {
   padding: 60px 0;
