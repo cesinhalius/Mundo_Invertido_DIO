@@ -101,7 +101,7 @@
             <input type="email" name="email" id="txtEmail">
 
             <label for="level">Level</label>
-            <input type="text" name="level" id="txtLevel">
+            <input type="number" name="level" id="txtLevel">
 
             <label for="character">Personagem</label>
             <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
@@ -124,10 +124,10 @@
   <audio id="music" src="assets/musics/normal-world.mpeg" autoplay></audio>
 
   <script>
-    window.addEventListener('click', function () {
+    button.addEventListener('click', function () {
       const audio = document.getElementById('music');
       audio.play();
-      audio.volume = 0.2;
+      audio.volume = 0.1;
     })
 
     function switchTheme() {
@@ -140,11 +140,11 @@
       const audio = document.getElementById('music');
       audio.src = `assets/musics/${music}`;
       audio.play();
-      audio.volume = 0.2;
+      audio.volume = 0.1;
     }
   </script>
 
-  <script src="assets/js/main.js" type="module"></script>
+  <script type="module" src="assets/js/main.js" ></script>
 </body>
 
 </html>
