@@ -2,8 +2,8 @@
 ![Logo](/assets/images/banner/logo.svg)
 Página com theme switcher utilizando HTML, CSS e JavaScript, além de integrar um formulário de inscrição com um banco de dados Firebase.
 
-| Projeto     | Status      |
-| ----------- | ----------- |
+| Projeto     | Status             |
+| ----------- | -----------        |
 | Header      | :heavy_check_mark: |
-| Main        | Text        |
-| Footer      | Text        |
+| Main        | :heavy_check_mark: |
+| Footer      | :heavy_check_mark: |
